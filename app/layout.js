@@ -9,8 +9,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Doctors Appointment App",
-  description: "Connect with doctors anytime, anywhere",
+  title: "ArogyaDarpan - Your Health Companion",
+  description:
+    " ArogyaDarpan is your personal health companion, providing insights and tools to manage your health effectively.",
 };
 
 export default function RootLayout({ children }) {
@@ -37,7 +38,11 @@ export default function RootLayout({ children }) {
 
             <footer className="bg-muted/50 py-12">
               <div className="container mx-auto px-4 text-center text-gray-200">
-                <p>Made with 💗 by RoadsideCoder</p>
+                <p>
+                  {" "}
+                  © {new Date().getFullYear()} ArogyaDarpan. Crafted with
+                  passion by Krish Prajapati.
+                </p>
               </div>
             </footer>
           </ThemeProvider>
