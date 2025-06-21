@@ -13,6 +13,12 @@ import { checkUser } from "@/lib/checkUser";
 import { Badge } from "./ui/badge";
 import { checkAndAllocateCredits } from "@/actions/credits";
 import Image from "next/image";
+import { Noto_Serif } from "next/font/google";
+
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 export default async function Header() {
   const user = await checkUser();
@@ -23,17 +29,33 @@ export default async function Header() {
   return (
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-10 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer">
+        <Link
+          href="/"
+          className="flex items-center gap-2 cursor-pointer select-none"
+        >
           <Image
-            src="/logo-single.png"
+            src="/logo.png"
             alt="Medimeet Logo"
             width={200}
             height={60}
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain ml-2"
+            priority
           />
+          <span
+            className={`
+          text-transparent 
+          bg-clip-text 
+          bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600
+          text-2xl md:text-3xl
+          tracking-tight
+          whitespace-nowrap
+          ${notoSerif.className}
+        `}
+          >
+            ArogyaDarpan
+          </span>
         </Link>
 
-        {/* Action Buttons */}
         <div className="flex items-center space-x-2">
           <SignedIn>
             {/* Admin Links */}
