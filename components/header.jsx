@@ -43,19 +43,19 @@ export default async function Header() {
           />
           <span
             className={`
-          text-transparent 
-          bg-clip-text 
-          bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600
-          text-2xl md:text-3xl
-          tracking-tight
-          whitespace-nowrap
-          ${notoSerif.className}
-        `}
+      hidden md:inline
+      text-transparent 
+      bg-clip-text 
+      bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600
+      text-2xl md:text-3xl
+      tracking-tight
+      whitespace-nowrap
+      ${notoSerif.className}
+    `}
           >
             ArogyaDarpan
           </span>
         </Link>
-
         <div className="flex items-center space-x-2">
           <SignedIn>
             {/* Admin Links */}
