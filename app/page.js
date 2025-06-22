@@ -145,7 +145,7 @@ export default function Home() {
                         </svg>
                       </div>
                       <p
-                        className="text-muted-foreground"
+                        className="text-muted-foreground mt-1"
                         dangerouslySetInnerHTML={{ __html: benefit }}
                       />
                     </li>
