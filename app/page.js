@@ -10,7 +10,6 @@ import { creditBenefits, features, testimonials } from "@/lib/data";
 export default function Home() {
   return (
     <div className="bg-background">
-      {/* Hero Section */}
       <section className="relative overflow-hidden py-32">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -63,7 +62,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -98,7 +96,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section with green medical styling */}
       <section id="pricing" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -118,10 +115,8 @@ export default function Home() {
           </div>
 
           <div className="mx-auto">
-            {/* Clerk Pricing Table */}
             {/* <Pricing /> */}
 
-            {/* Description */}
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
@@ -162,7 +157,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials with green medical accents */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -212,7 +206,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section with green medical styling */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/20">
@@ -245,7 +238,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Decorative healthcare elements */}
               <div className="absolute right-0 top-0 w-[300px] h-[300px] bg-emerald-800/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
               <div className="absolute left-0 bottom-0 w-[200px] h-[200px] bg-emerald-700/10 rounded-full blur-3xl -ml-10 -mb-10"></div>
             </CardContent>
