@@ -13,6 +13,9 @@ CREATE TYPE "AppointmentStatus" AS ENUM ('SCHEDULED', 'COMPLETED', 'CANCELLED');
 -- CreateEnum
 CREATE TYPE "TransactionType" AS ENUM ('CREDIT_PURCHASE', 'APPOINTMENT_DEDUCTION', 'ADMIN_ADJUSTMENT');
 
+-- CreateEnum
+CREATE TYPE "PayoutStatus" AS ENUM ('PROCESSING', 'PROCESSED');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -23,7 +26,7 @@ CREATE TABLE "User" (
     "role" "UserRole" NOT NULL DEFAULT 'UNASSIGNED',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    "credits" INTEGER NOT NULL DEFAULT 0,
+    "credits" INTEGER NOT NULL DEFAULT 2,
     "specialty" TEXT,
     "experience" INTEGER,
     "credentialUrl" TEXT,
@@ -49,7 +52,8 @@ CREATE TABLE "Appointment" (
     "id" TEXT NOT NULL,
     "patientId" TEXT NOT NULL,
     "doctorId" TEXT NOT NULL,
-    "availabilityId" TEXT,
+    "startTime" TIMESTAMP(3) NOT NULL,
+    "endTime" TIMESTAMP(3) NOT NULL,
     "status" "AppointmentStatus" NOT NULL DEFAULT 'SCHEDULED',
     "notes" TEXT,
     "patientDescription" TEXT,
@@ -68,22 +72,27 @@ CREATE TABLE "CreditTransaction" (
     "amount" INTEGER NOT NULL,
     "type" "TransactionType" NOT NULL,
     "packageId" TEXT,
-    "description" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "CreditTransaction_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
-CREATE TABLE "CreditPackage" (
+CREATE TABLE "Payout" (
     "id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
+    "doctorId" TEXT NOT NULL,
+    "amount" DOUBLE PRECISION NOT NULL,
     "credits" INTEGER NOT NULL,
-    "price" DOUBLE PRECISION NOT NULL,
-    "active" BOOLEAN NOT NULL DEFAULT true,
+    "platformFee" DOUBLE PRECISION NOT NULL,
+    "netAmount" DOUBLE PRECISION NOT NULL,
+    "paypalEmail" TEXT NOT NULL,
+    "status" "PayoutStatus" NOT NULL DEFAULT 'PROCESSING',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "processedAt" TIMESTAMP(3),
+    "processedBy" TEXT,
 
-    CONSTRAINT "CreditPackage_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Payout_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -96,10 +105,16 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 CREATE INDEX "Availability_doctorId_startTime_idx" ON "Availability"("doctorId", "startTime");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Appointment_availabilityId_key" ON "Appointment"("availabilityId");
+CREATE INDEX "Appointment_status_startTime_idx" ON "Appointment"("status", "startTime");
 
 -- CreateIndex
-CREATE INDEX "Appointment_status_createdAt_idx" ON "Appointment"("status", "createdAt");
+CREATE INDEX "Appointment_doctorId_startTime_idx" ON "Appointment"("doctorId", "startTime");
+
+-- CreateIndex
+CREATE INDEX "Payout_status_createdAt_idx" ON "Payout"("status", "createdAt");
+
+-- CreateIndex
+CREATE INDEX "Payout_doctorId_status_idx" ON "Payout"("doctorId", "status");
 
 -- AddForeignKey
 ALTER TABLE "Availability" ADD CONSTRAINT "Availability_doctorId_fkey" FOREIGN KEY ("doctorId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -111,7 +126,7 @@ ALTER TABLE "Appointment" ADD CONSTRAINT "Appointment_patientId_fkey" FOREIGN KE
 ALTER TABLE "Appointment" ADD CONSTRAINT "Appointment_doctorId_fkey" FOREIGN KEY ("doctorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Appointment" ADD CONSTRAINT "Appointment_availabilityId_fkey" FOREIGN KEY ("availabilityId") REFERENCES "Availability"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "CreditTransaction" ADD CONSTRAINT "CreditTransaction_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "CreditTransaction" ADD CONSTRAINT "CreditTransaction_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Payout" ADD CONSTRAINT "Payout_doctorId_fkey" FOREIGN KEY ("doctorId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
