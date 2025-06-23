@@ -158,9 +158,12 @@ export default async function Header() {
             <UserButton
               appearance={{
                 elements: {
-                  avatarBox: "w-10 h-10",
-                  userButtonPopoverCard: "shadow-xl",
-                  userPreviewMainIdentifier: "font-semibold",
+                  userButtonAvatarBox: {
+                    width: "35px",
+                    height: "35px",
+                    borderRadius: "20%",
+                    border: "1px solid gray",
+                  },
                 },
               }}
               afterSignOutUrl="/"
