@@ -40,51 +40,35 @@ export function ContainerTextFlip({
   }, [words, interval]);
 
   return (
-    <motion.p
-      layout
-      layoutId={`words-here-${id}`}
-      animate={{ width }}
-      transition={{ duration: animationDuration / 2000 }}
-      className={cn(
-        "relative inline-block rounded-lg pt-2 pb-3 text-center text-md font-bold text-black md:text-md dark:text-white",
-        "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
-        "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
-        "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
-        "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
-        className
-      )}
-      key={words[currentWordIndex]}
-    >
-      <motion.div
-        transition={{
-          duration: animationDuration / 1000,
-          ease: "easeInOut",
-        }}
-        className={cn("inline-block", textClassName)}
-        ref={textRef}
-        layoutId={`word-div-${words[currentWordIndex]}-${id}`}
+    <div className="...">
+      <motion.p
+        layout
+        layoutId={`words-here-${id}`}
+        animate={{ width }}
+        transition={{ duration: animationDuration / 2000 }}
+        className={cn(
+          "relative inline-block rounded-lg pt-2 pb-3 text-center text-md font-bold text-black md:text-md dark:text-white",
+          "[background:linear-gradient(to_bottom,rgba(243,244,246,0.9),rgba(229,231,235,0.9))]",
+          "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
+          "dark:[background:linear-gradient(to_bottom,rgba(55,65,81,0.9),rgba(31,41,55,0.9))]",
+          "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
+          className
+        )}
+        key={words[currentWordIndex]}
       >
-        <motion.div className="inline-block">
+        <span className={cn("inline-block", textClassName)} ref={textRef}>
           {words[currentWordIndex].split("").map((letter, index) => (
             <motion.span
               key={index}
-              initial={{
-                opacity: 0,
-                filter: "blur(10px)",
-              }}
-              animate={{
-                opacity: 1,
-                filter: "blur(0px)",
-              }}
-              transition={{
-                delay: index * 0.02,
-              }}
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: index * 0.02 }}
             >
               {letter}
             </motion.span>
           ))}
-        </motion.div>
-      </motion.div>
-    </motion.p>
+        </span>
+      </motion.p>
+    </div>
   );
 }
