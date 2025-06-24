@@ -125,6 +125,7 @@
   @apply bg-gradient-to-b from-emerald-500 to-teal-400;
 }
 
-@utility gradient-title {
-  @apply gradient font-bold text-transparent bg-clip-text pb-1 pr-2;
+/* In your global CSS file (e.g., styles.css or input.css) */
+.gradient-title {
+  @apply bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent pb-1 pr-2;
 }
