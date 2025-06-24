@@ -9,15 +9,17 @@ import { creditBenefits, features, testimonials } from "@/lib/data";
 import { Cover } from "@/components/ui/cover";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { GlobeDemo } from "@/components/world";
 
 export default function Home() {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden py-32">
+      <section className="relative overflow-hidden py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-8 ml-4">
               <ContainerTextFlip
+                className="z-10"
                 words={[
                   "Where Health Meets Technology.",
                   "Bringing Care to Your Fingertips.",
@@ -26,7 +28,7 @@ export default function Home() {
                   "Smart. Simple. Connected Care.",
                 ]}
               />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight ">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 <Cover>Your Digital Health</Cover> <br />
                 <span className="gradient-title">
                   Revolution <br /> Starts From Here !
@@ -40,38 +42,32 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-emerald-600 text-white hover:bg-emerald-700"
+                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700 z-100"
                 >
                   <Link href="/onboarding">
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Started <ArrowRight className="ml-2 h-4 w-4 " />
                   </Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-emerald-700/30 hover:bg-muted/80"
+                  className="border-emerald-700/30 hover:bg-muted/80 z-100"
                 >
                   <Link href="/doctors">Find Doctors</Link>
                 </Button>
               </div>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
-              <Image
-                src="/banner2.png"
-                alt="Doctor consultation"
-                fill
-                priority
-                className="object-cover md:pt-14 rounded-xl"
-              />
+            <div className="relative h-[520px] lg:h-[620px] rounded-xl overflow-hidden">
+              <GlobeDemo />
             </div>
           </div>
         </div>
         <BackgroundBeams />
       </section>
 
-      <section className="py-20 bg-muted/30">
+      <section className="py-10 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
