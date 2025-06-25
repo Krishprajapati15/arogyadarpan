@@ -10,11 +10,12 @@ import { Cover } from "@/components/ui/cover";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GlobeDemo } from "@/components/world";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden py-16">
+      <section className="relative overflow-hidden py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-8 ml-4">
@@ -67,36 +68,48 @@ export default function Home() {
         <BackgroundBeams />
       </section>
 
-      <section className="py-10 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              How It Works
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Our platform makes healthcare accessible with just a few clicks
-            </p>
-          </div>
+      <section className="bg-muted/30">
+        <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+          <div
+            className={cn(
+              "absolute inset-0",
+              "[background-size:20px_20px]",
+              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+            )}
+          />
+          <div className="relative container mx-auto px-4">
+            <div className="text-center mb-16 ">
+              <h2 className="text-3xl md:text-4xl font-bold  text-white mb-4">
+                <Cover>How It Works</Cover>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto z-50">
+                Our platform makes healthcare accessible with just a few clicks
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
-              >
-                <CardHeader className="pb-2">
-                  <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl font-semibold text-white">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <Card
+                  key={index}
+                  className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300 z-100"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
+                      {feature.icon}
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-white">
+                      {feature.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
