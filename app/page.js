@@ -13,6 +13,8 @@ import { GlobeDemo } from "@/components/world";
 import { cn } from "@/lib/utils";
 import MacbookTestimonialSection from "@/components/maccard";
 import { LinkPreview } from "@/components/ui/link-preview";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 
 export default function Home() {
   return (
@@ -217,7 +219,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <InfiniteMovingCardsDemo />
+
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/20">
             <CardContent className="p-8 md:p-12 lg:p-16 relative overflow-hidden">
