@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+import React from "react";
 import Link from "next/link";
 import { ArrowRight, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,10 @@ import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GlobeDemo } from "@/components/world";
 import { cn } from "@/lib/utils";
+import MacbookTestimonialSection from "@/components/maccard";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
+import { LayoutGridDemo } from "@/components/layout-hospital";
 
 export default function Home() {
   return (
@@ -22,11 +27,11 @@ export default function Home() {
               <ContainerTextFlip
                 className="z-10"
                 words={[
-                  "Where Health Meets Technology.",
-                  "Bringing Care to Your Fingertips.",
-                  "Reimagining Healthcare, Digitally.",
-                  "Your Wellness, One Click Away.",
-                  "Smart. Simple. Connected Care.",
+                  "🟢 Where Health Meets Technology.",
+                  "🟢 Bringing Care to Your Fingertips.",
+                  "🟢 Reimagining Healthcare, Digitally.",
+                  "🟢 Your Wellness, One Click Away.",
+                  "🟢 Smart. Simple. Connected Care.",
                 ]}
               />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -92,12 +97,13 @@ export default function Home() {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300 z-100"
+                  className="bg-card border-2 border-teal-400/40 hover:border-cyan-400/60 transition-all duration-100 z-100"
                 >
                   <CardHeader className="pb-2">
-                    <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
+                    <div className="bg-gradient-to-r from-teal-400/80 via-cyan-500/80 to-teal-600/80 p-3 rounded-lg w-fit mb-4">
                       {feature.icon}
                     </div>
+
                     <CardTitle className="text-xl font-semibold text-white">
                       {feature.title}
                     </CardTitle>
@@ -114,21 +120,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20">
+      <section id="pricing" className="py-10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
-            >
-              Affordable Healthcare
-            </Badge>
+          <div className="text-center mb-10">
+            <ContainerTextFlip
+              className="z-10 mb-4"
+              words={[
+                "✅ Affordable Healthcare",
+                "✅ Care Within Reach",
+                "✅ Smarter Health Access",
+                "✅ Digital First. Doctor Ready",
+                "✅ Wellness, Simplified",
+              ]}
+            />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Consultation Packages
+              <LinkPreview url="https://www.krishprajapati.tech/#home">
+                Flexible Consultation Plans
+              </LinkPreview>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Choose the perfect consultation package that fits your healthcare
-              needs
+              Select the plan that suits your health needs — from quick checkups
+              to comprehensive care, we’ve got you covered.
             </p>
           </div>
 
@@ -138,7 +150,7 @@ export default function Home() {
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
-                  <Stethoscope className="h-5 w-5 mr-2 text-emerald-400" />
+                  <Stethoscope className="h-5 w-5 mr-2 text-emerald-400 -mb-2" />
                   How Our Credit System Works
                 </CardTitle>
               </CardHeader>
@@ -175,93 +187,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
-            >
-              Success Stories
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What Our Users Say
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Hear from patients and doctors who use our platform
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="border-emerald-900/20 hover:border-emerald-800/40 transition-all"
+      <section className="bg-muted/60">
+        <div className="relative flex h-[40rem] w-full items-center justify-center bg-white dark:bg-black">
+          <div
+            className={cn(
+              "absolute inset-0",
+              "[background-size:20px_20px]",
+              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+            )}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-6">
+              <Badge
+                variant="outline"
+                className="bg-emerald-900 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
               >
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center mr-4">
-                      <span className="text-emerald-400 font-bold">
-                        {testimonial.initials}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-white">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                Success Stories
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-1">
+                Real Experiences. Real Impact.
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Discover how ArogyaDarpan is transforming lives — from patients
+                finding instant care to doctors reaching those in need.
+              </p>
+            </div>
+            <div className="relative z-20">
+              <MacbookTestimonialSection />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/20">
-            <CardContent className="p-8 md:p-12 lg:p-16 relative overflow-hidden">
-              <div className="max-w-2xl relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Ready to take control of your healthcare?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Join thousands of users who have simplified their healthcare
-                  journey with our platform. Get started today and experience
-                  healthcare the way it should be.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-emerald-600 text-white hover:bg-emerald-700"
-                  >
-                    <Link href="/sign-up">Sign Up Now</Link>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-emerald-700/30 hover:bg-muted/80"
-                  >
-                    <Link href="#pricing">View Pricing</Link>
-                  </Button>
-                </div>
-              </div>
-
-              <div className="absolute right-0 top-0 w-[300px] h-[300px] bg-emerald-800/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-              <div className="absolute left-0 bottom-0 w-[200px] h-[200px] bg-emerald-700/10 rounded-full blur-3xl -ml-10 -mb-10"></div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <InfiniteMovingCardsDemo />
+      <LayoutGridDemo />
     </div>
   );
 }
