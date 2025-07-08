@@ -4,9 +4,6 @@ import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
-/**
- * Verifies if current user has admin role
- */
 export async function verifyAdmin() {
   const { userId } = await auth();
 
@@ -28,9 +25,6 @@ export async function verifyAdmin() {
   }
 }
 
-/**
- * Gets all doctors with pending verification
- */
 export async function getPendingDoctors() {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -52,9 +46,6 @@ export async function getPendingDoctors() {
   }
 }
 
-/**
- * Gets all verified doctors
- */
 export async function getVerifiedDoctors() {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -77,9 +68,6 @@ export async function getVerifiedDoctors() {
   }
 }
 
-/**
- * Updates a doctor's verification status
- */
 export async function updateDoctorStatus(formData) {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -109,9 +97,6 @@ export async function updateDoctorStatus(formData) {
   }
 }
 
-/**
- * Suspends or reinstates a doctor
- */
 export async function updateDoctorActiveStatus(formData) {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -143,9 +128,6 @@ export async function updateDoctorActiveStatus(formData) {
   }
 }
 
-/**
- * Gets all pending payouts that need admin approval
- */
 export async function getPendingPayouts() {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -178,9 +160,6 @@ export async function getPendingPayouts() {
   }
 }
 
-/**
- * Approves a payout request and deducts credits from doctor's account
- */
 export async function approvePayout(formData) {
   const isAdmin = await verifyAdmin();
   if (!isAdmin) throw new Error("Unauthorized");
@@ -261,3 +240,5 @@ export async function approvePayout(formData) {
     throw new Error(`Failed to approve payout: ${error.message}`);
   }
 }
+
+// chore: update project files

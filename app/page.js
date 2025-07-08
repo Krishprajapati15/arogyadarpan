@@ -151,7 +151,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
                   <Stethoscope className="h-5 w-5 mr-2 text-emerald-400 -mb-2" />
-                  How Our Credit System Works
+                  How Credit System Works
                 </CardTitle>
               </CardHeader>
               <CardContent>

@@ -12,28 +12,20 @@ const PLAN_CREDITS = {
   premium: 24, // Premium plan: 24 credits per month
 };
 
-// Each appointment costs 2 credits
 const APPOINTMENT_CREDIT_COST = 2;
 
-/**
- * Checks user's subscription and allocates monthly credits if needed
- * This should be called on app initialization (e.g., in a layout component)
- */
 export async function checkAndAllocateCredits(user) {
   try {
     if (!user) {
       return null;
     }
 
-    // Only allocate credits for patients
     if (user.role !== "PATIENT") {
       return user;
     }
 
-    // Check if user has a subscription
     const { has } = await auth();
 
-    // Check which plan the user has
     const hasBasic = has({ plan: "free_user" });
     const hasStandard = has({ plan: "standard" });
     const hasPremium = has({ plan: "premium" });
@@ -52,15 +44,12 @@ export async function checkAndAllocateCredits(user) {
       creditsToAllocate = PLAN_CREDITS.free_user;
     }
 
-    // If user doesn't have any plan, just return the user
     if (!currentPlan) {
       return user;
     }
 
-    // Check if we already allocated credits for this month
     const currentMonth = format(new Date(), "yyyy-MM");
 
-    // If there's a transaction this month, check if it's for the same plan
     if (user.transactions.length > 0) {
       const latestTransaction = user.transactions[0];
       const transactionMonth = format(
@@ -69,7 +58,6 @@ export async function checkAndAllocateCredits(user) {
       );
       const transactionPlan = latestTransaction.packageId;
 
-      // If we already allocated credits for this month and the plan is the same, just return
       if (
         transactionMonth === currentMonth &&
         transactionPlan === currentPlan
@@ -78,9 +66,7 @@ export async function checkAndAllocateCredits(user) {
       }
     }
 
-    // Allocate credits and create transaction record
     const updatedUser = await db.$transaction(async (tx) => {
-      // Create transaction record
       await tx.creditTransaction.create({
         data: {
           userId: user.id,
@@ -90,7 +76,6 @@ export async function checkAndAllocateCredits(user) {
         },
       });
 
-      // Update user's credit balance
       const updatedUser = await tx.user.update({
         where: {
           id: user.id,
@@ -105,7 +90,6 @@ export async function checkAndAllocateCredits(user) {
       return updatedUser;
     });
 
-    // Revalidate relevant paths to reflect updated credit balance
     revalidatePath("/doctors");
     revalidatePath("/appointments");
 
@@ -119,9 +103,6 @@ export async function checkAndAllocateCredits(user) {
   }
 }
 
-/**
- * Deducts credits for booking an appointment
- */
 export async function deductCreditsForAppointment(userId, doctorId) {
   try {
     const user = await db.user.findUnique({
@@ -132,7 +113,6 @@ export async function deductCreditsForAppointment(userId, doctorId) {
       where: { id: doctorId },
     });
 
-    // Ensure user has sufficient credits
     if (user.credits < APPOINTMENT_CREDIT_COST) {
       throw new Error("Insufficient credits to book an appointment");
     }
@@ -141,9 +121,7 @@ export async function deductCreditsForAppointment(userId, doctorId) {
       throw new Error("Doctor not found");
     }
 
-    // Deduct credits from patient and add to doctor
     const result = await db.$transaction(async (tx) => {
-      // Create transaction record for patient (deduction)
       await tx.creditTransaction.create({
         data: {
           userId: user.id,
@@ -152,16 +130,14 @@ export async function deductCreditsForAppointment(userId, doctorId) {
         },
       });
 
-      // Create transaction record for doctor (addition)
       await tx.creditTransaction.create({
         data: {
           userId: doctor.id,
           amount: APPOINTMENT_CREDIT_COST,
-          type: "APPOINTMENT_DEDUCTION", // Using same type for consistency
+          type: "APPOINTMENT_DEDUCTION",
         },
       });
 
-      // Update patient's credit balance (decrement)
       const updatedUser = await tx.user.update({
         where: {
           id: user.id,
