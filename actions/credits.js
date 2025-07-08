@@ -141,9 +141,7 @@ export async function deductCreditsForAppointment(userId, doctorId) {
       throw new Error("Doctor not found");
     }
 
-    // Deduct credits from patient and add to doctor
     const result = await db.$transaction(async (tx) => {
-      // Create transaction record for patient (deduction)
       await tx.creditTransaction.create({
         data: {
           userId: user.id,
