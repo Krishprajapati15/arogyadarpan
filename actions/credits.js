@@ -152,16 +152,14 @@ export async function deductCreditsForAppointment(userId, doctorId) {
         },
       });
 
-      // Create transaction record for doctor (addition)
       await tx.creditTransaction.create({
         data: {
           userId: doctor.id,
           amount: APPOINTMENT_CREDIT_COST,
-          type: "APPOINTMENT_DEDUCTION", // Using same type for consistency
+          type: "APPOINTMENT_DEDUCTION",
         },
       });
 
-      // Update patient's credit balance (decrement)
       const updatedUser = await tx.user.update({
         where: {
           id: user.id,
