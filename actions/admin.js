@@ -199,7 +199,6 @@ export async function approvePayout(formData) {
 
     // Process the payout in a transaction
     await db.$transaction(async (tx) => {
-      // Update payout status to PROCESSED
       await tx.payout.update({
         where: {
           id: payoutId,
@@ -211,7 +210,6 @@ export async function approvePayout(formData) {
         },
       });
 
-      // Deduct credits from doctor's account
       await tx.user.update({
         where: {
           id: payout.doctorId,
@@ -223,7 +221,6 @@ export async function approvePayout(formData) {
         },
       });
 
-      // Create a transaction record for the deduction
       await tx.creditTransaction.create({
         data: {
           userId: payout.doctorId,
@@ -240,5 +237,3 @@ export async function approvePayout(formData) {
     throw new Error(`Failed to approve payout: ${error.message}`);
   }
 }
-
-// chore: update project files
