@@ -140,10 +140,10 @@ export const SkeletonThree = () => {
 export const SkeletonTwo = () => {
   const images = [
     "/grid_img1.png",
-    "https://images.unsplash.com/photo-1581091224003-05e13a2d64a8?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1551193582-634e5b22b406?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1530497610245-92d3c524de0a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "grid_img2.png",
+    "grid_img3.png",
+    "grid_img4.png",
+    "grid_img5.png",
   ];
 
   const imageVariants = {
