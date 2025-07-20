@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
+
 import {
   Modal,
   ModalBody,
@@ -9,6 +10,13 @@ import {
   ModalFooter,
   ModalTrigger,
 } from "./ui/animated-modal";
+import {
+  BotIcon,
+  FileUpIcon,
+  HistoryIcon,
+  PillIcon,
+  StethoscopeIcon,
+} from "lucide-react";
 export function AnimatedModalDemo() {
   const images = [
     "/grid_img1.png",
@@ -67,51 +75,51 @@ export function AnimatedModalDemo() {
                 </motion.div>
               ))}
             </div>
-            <div className="py-6 flex flex-wrap gap-x-4  gap-y-6 items-start justify-start max-w-sm mx-auto">
-              <div className="flex  items-center justify-center">
-                <PlaneIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  5 connecting flights
-                </span>
-              </div>
+            <div className="py-6 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
               <div className="flex items-center justify-center">
-                <ElevatorIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <PillIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                 <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  12 hotels
-                </span>
-              </div>
-              <div className="flex items-center justify-center">
-                <VacationIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  69 visiting spots
-                </span>
-              </div>
-              <div className="flex  items-center justify-center">
-                <FoodIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  Good food everyday
+                  10,000+ Medicines
                 </span>
               </div>
               <div className="flex items-center justify-center">
                 <MicIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                 <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  Open Mic
+                  Voice Assistant Enabled
                 </span>
               </div>
               <div className="flex items-center justify-center">
-                <ParachuteIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <BotIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
                 <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-                  Paragliding
+                  AI Health Chatbot 24/7
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <StethoscopeIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Global Doctor Network
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <FileUpIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Upload & Access
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <HistoryIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Track Medical History
                 </span>
               </div>
             </div>
           </ModalContent>
           <ModalFooter className="gap-4">
-            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28 cursor-pointer">
               Cancel
             </button>
-            <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-              Book Now
+            <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28 cursor-pointer">
+              Acess Now
             </button>
           </ModalFooter>
         </ModalBody>
