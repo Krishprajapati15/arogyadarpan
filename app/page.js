@@ -16,6 +16,7 @@ import MacbookTestimonialSection from "@/components/maccard";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 import { FeaturesSectionDemo } from "@/components/Bento-grid";
+import { AnimatedModalDemo } from "@/components/animate-button";
 <script src="https://www.noupe.com/embed/0197b11b0d4f750a8192c2160ee41fa0469a.js"></script>;
 
 export default function Home() {
@@ -223,6 +224,7 @@ export default function Home() {
 
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
+      <AnimatedModalDemo />
     </div>
   );
 }
