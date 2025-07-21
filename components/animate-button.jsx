@@ -67,7 +67,7 @@ export function AnimatedModalDemo() {
           </section>
         </div>
 
-        <ModalBody>
+        <ModalBody className="w-4xl my-10">
           <ModalContent className="-mb-10">
             <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-2">
               Discover health with{" "}
