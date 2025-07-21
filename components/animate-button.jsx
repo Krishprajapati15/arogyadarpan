@@ -17,6 +17,7 @@ import {
   PillIcon,
   StethoscopeIcon,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 export function AnimatedModalDemo() {
   const images = [
     "/grid_img1.png",
@@ -28,14 +29,44 @@ export function AnimatedModalDemo() {
   return (
     <div className="py-20 flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn cursor-pointer">
-          <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
-            Try our AI Future
-          </span>
-          <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
-            🤖
-          </div>
-        </ModalTrigger>
+        <div className="relative flex  w-full items-center justify-center">
+          <section className="border-2 backdrop-blur-md rounded-2xl p-6 md:p-10 max-w-6xl w-5xl mx-auto text-center -mt-14 relative overflow-hidden">
+            <div
+              className={cn(
+                "absolute inset-0 -z-10 rounded-2xl",
+                "[background-size:20px_20px]",
+                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              )}
+            />
+
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-white mb-6">
+              Discover the Future of Travel with AI 🌐
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+                💊 Find Medicines Instantly
+              </span>
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+                🗣️ Voice Assistance Enabled
+              </span>
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+                🤖 Chat with our Smart Bot
+              </span>
+            </div>
+
+            <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn cursor-pointer mx-auto px-6 py-2 rounded-lg relative overflow-hidden w-fit">
+              <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+                Try our AI Future
+              </span>
+              <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
+                🤖
+              </div>
+            </ModalTrigger>
+          </section>
+        </div>
+
         <ModalBody>
           <ModalContent className="-mb-10">
             <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-2">
