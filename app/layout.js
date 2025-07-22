@@ -7,7 +7,7 @@ import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import React from "react";
-import { AnimatedTooltip } from "../components/ui/animated-tooltip"; // Adjust this import if needed
+import { AnimatedTooltip } from "../components/ui/animated-tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
