@@ -17,6 +17,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 import { FeaturesSectionDemo } from "@/components/Bento-grid";
 import { AnimatedModalDemo } from "@/components/animate-button";
+import NVIDIAChatbot from "@/components/chatbot";
 
 export default function Home() {
   return (
@@ -224,6 +225,7 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
+      <NVIDIAChatbot />
     </div>
   );
 }
