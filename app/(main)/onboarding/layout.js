@@ -31,10 +31,10 @@ export default async function OnboardingLayout({ children }) {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-white mb-2">
-            Welcome to MediMeet
+            Step Into Care, Your Way
           </h1>
           <p className="text-muted-foreground text-lg">
-            Tell us how you want to use the platform
+            Whether you're healing or helping, start your journey below.
           </p>
         </div>
 

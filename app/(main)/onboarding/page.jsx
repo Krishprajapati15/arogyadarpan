@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { User, Stethoscope, Loader2 } from "lucide-react";
+import { User, Stethoscope, Loader2, ArrowRight } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -90,12 +90,12 @@ export default function OnboardingPage() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-cyan-500/20 border-2 hover:border-cyan-500/60 cursor-pointer transition-all"
           onClick={() => !loading && handlePatientSelection()}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <User className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 rounded-full mb-4">
+              <User className="h-8 w-8 text-white" />
             </div>
             <CardTitle className="text-xl font-semibold text-white mb-2">
               Join as a Patient
@@ -105,7 +105,7 @@ export default function OnboardingPage() {
               healthcare journey
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full mt-2 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700"
               disabled={loading}
             >
               {loading ? (
@@ -116,17 +116,18 @@ export default function OnboardingPage() {
               ) : (
                 "Continue as Patient"
               )}
+              <ArrowRight className="ml-2 h-4 w-4 " />
             </Button>
           </CardContent>
         </Card>
 
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-cyan-500/20 border-2 hover:border-cyan-500/60 cursor-pointer transition-all"
           onClick={() => !loading && setStep("doctor-form")}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <Stethoscope className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 rounded-full mb-4">
+              <Stethoscope className="h-8 w-8 text-white" />
             </div>
             <CardTitle className="text-xl font-semibold text-white mb-2">
               Join as a Doctor
@@ -136,10 +137,10 @@ export default function OnboardingPage() {
               provide consultations
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full mt-2 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700"
               disabled={loading}
             >
-              Continue as Doctor
+              Continue as Doctor <ArrowRight className="ml-2 h-4 w-4 " />
             </Button>
           </CardContent>
         </Card>
