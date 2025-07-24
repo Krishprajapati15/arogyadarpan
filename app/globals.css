@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* global.css */
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
