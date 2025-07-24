@@ -311,11 +311,12 @@ export function AppointmentCard({
 
       {/* Appointment Details Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-4xl mt-8">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-white">
+            <DialogTitle className=" -mb-2 text-2xl font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent">
               Appointment Details
             </DialogTitle>
+
             <DialogDescription>
               {appointment.status === "SCHEDULED"
                 ? "Manage your upcoming appointment"
@@ -323,8 +324,7 @@ export function AppointmentCard({
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-4 py-4">
-            {/* Other Party Information */}
+          <div className="space-y-4 py-4 overflow-y-auto max-h-[50vh] px-2">
             <div className="space-y-2">
               <h4 className="text-sm font-medium text-muted-foreground">
                 {otherPartyLabel}
@@ -417,7 +417,7 @@ export function AppointmentCard({
                   Video Consultation
                 </h4>
                 <Button
-                  className="w-full bg-emerald-600 hover:bg-emerald-700"
+                  className="w-full bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white"
                   disabled={
                     !isAppointmentActive() || action === "video" || tokenLoading
                   }
@@ -523,7 +523,7 @@ export function AppointmentCard({
                 <Button
                   onClick={handleMarkCompleted}
                   disabled={completeLoading}
-                  className="bg-emerald-600 hover:bg-emerald-700"
+                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white cursor-pointer hover:bg-emerald-700"
                 >
                   {completeLoading ? (
                     <>
@@ -545,7 +545,7 @@ export function AppointmentCard({
                   variant="outline"
                   onClick={handleCancelAppointment}
                   disabled={cancelLoading}
-                  className="border-red-900/30 text-red-400 hover:bg-red-900/10 mt-3 sm:mt-0"
+                  className="border-red-900/30 text-red-400 cursor-pointer hover:bg-red-900/10 mt-3 sm:mt-0"
                 >
                   {cancelLoading ? (
                     <>
@@ -564,7 +564,7 @@ export function AppointmentCard({
 
             <Button
               onClick={() => setOpen(false)}
-              className="bg-emerald-600 hover:bg-emerald-700"
+              className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white cursor-pointer hover:bg-emerald-700"
             >
               Close
             </Button>
