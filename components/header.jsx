@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import {
   Calendar,
   CreditCard,
+  PhoneCall,
   ShieldCheck,
   Stethoscope,
   User,
@@ -106,7 +107,6 @@ export default async function Header() {
               </Link>
             )}
 
-            {/* Unassigned Role */}
             {user?.role === "UNASSIGNED" && (
               <Link href="/onboarding">
                 <Button
