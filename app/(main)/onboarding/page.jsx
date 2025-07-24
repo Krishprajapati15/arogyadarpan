@@ -11,7 +11,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { User, Stethoscope, Loader2 } from "lucide-react";
+import {
+  User,
+  Stethoscope,
+  Loader2,
+  ArrowRight,
+  ArrowLeft,
+} from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -88,14 +94,14 @@ export default function OnboardingPage() {
   // Role selection screen
   if (step === "choose-role") {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-26">
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-cyan-500/20 border-2 hover:border-cyan-500/60 cursor-pointer transition-all"
           onClick={() => !loading && handlePatientSelection()}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <User className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 rounded-full mb-4">
+              <User className="h-8 w-8 text-white" />
             </div>
             <CardTitle className="text-xl font-semibold text-white mb-2">
               Join as a Patient
@@ -105,7 +111,7 @@ export default function OnboardingPage() {
               healthcare journey
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full mt-2 cursor-pointer bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700"
               disabled={loading}
             >
               {loading ? (
@@ -116,17 +122,18 @@ export default function OnboardingPage() {
               ) : (
                 "Continue as Patient"
               )}
+              <ArrowRight className="ml-2 h-4 w-4 " />
             </Button>
           </CardContent>
         </Card>
 
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-cyan-500/20 border-2 hover:border-cyan-500/60 cursor-pointer transition-all"
           onClick={() => !loading && setStep("doctor-form")}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <Stethoscope className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 rounded-full mb-4">
+              <Stethoscope className="h-8 w-8 text-white" />
             </div>
             <CardTitle className="text-xl font-semibold text-white mb-2">
               Join as a Doctor
@@ -136,10 +143,10 @@ export default function OnboardingPage() {
               provide consultations
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full cursor-pointer mt-2 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700"
               disabled={loading}
             >
-              Continue as Doctor
+              Continue as Doctor <ArrowRight className="ml-2 h-4 w-4 " />
             </Button>
           </CardContent>
         </Card>
@@ -150,33 +157,39 @@ export default function OnboardingPage() {
   // Doctor registration form
   if (step === "doctor-form") {
     return (
-      <Card className="border-emerald-900/20">
-        <CardContent className="pt-6">
-          <div className="mb-6">
-            <CardTitle className="text-2xl font-bold text-white mb-2">
-              Complete Your Doctor Profile
+      <Card className="bg-white/5 border border-teal-300/20 backdrop-blur-xl shadow-2xl rounded-3xl p-6  md:p-8 mb-10">
+        <CardContent>
+          <div className="mb-8">
+            <CardTitle className="text-3xl font-bold text-white mb-2 tracking-tight">
+              👨‍⚕️ Complete Your Doctor Profile
             </CardTitle>
-            <CardDescription>
-              Please provide your professional details for verification
+            <CardDescription className="text-emerald-200 text-sm">
+              Please provide your professional details for verification.
             </CardDescription>
           </div>
 
           <form onSubmit={handleSubmit(onDoctorSubmit)} className="space-y-6">
+            {/* Specialty Field */}
             <div className="space-y-2">
-              <Label htmlFor="specialty">Medical Specialty</Label>
+              <Label htmlFor="specialty" className="text-white text-sm">
+                Medical Specialty
+              </Label>
               <Select
                 value={specialtyValue}
                 onValueChange={(value) => setValue("specialty", value)}
               >
-                <SelectTrigger id="specialty">
+                <SelectTrigger
+                  id="specialty"
+                  className="bg-white/10 border border-emerald-400/30 text-white focus:ring-2 focus:ring-teal-500 transition-all duration-200"
+                >
                   <SelectValue placeholder="Select your specialty" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="max-h-48 overflow-y-auto bg-black/90 border border-emerald-400/10 text-white">
                   {SPECIALTIES.map((spec) => (
                     <SelectItem
                       key={spec.name}
                       value={spec.name}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 hover:bg-emerald-500/10 transition-colors"
                     >
                       <span className="text-emerald-400">{spec.icon}</span>
                       {spec.name}
@@ -185,73 +198,88 @@ export default function OnboardingPage() {
                 </SelectContent>
               </Select>
               {errors.specialty && (
-                <p className="text-sm font-medium text-red-500 mt-1">
+                <p className="text-sm text-red-500 font-medium">
                   {errors.specialty.message}
                 </p>
               )}
             </div>
 
+            {/* Experience Field */}
             <div className="space-y-2">
-              <Label htmlFor="experience">Years of Experience</Label>
+              <Label htmlFor="experience" className="text-white text-sm">
+                Years of Experience
+              </Label>
               <Input
                 id="experience"
                 type="number"
                 placeholder="e.g. 5"
+                className="bg-white/10 text-white border border-emerald-400/20 placeholder:text-gray-400"
                 {...register("experience", { valueAsNumber: true })}
               />
               {errors.experience && (
-                <p className="text-sm font-medium text-red-500 mt-1">
+                <p className="text-sm text-red-500 font-medium">
                   {errors.experience.message}
                 </p>
               )}
             </div>
 
+            {/* Credential URL */}
             <div className="space-y-2">
-              <Label htmlFor="credentialUrl">Link to Credential Document</Label>
+              <Label htmlFor="credentialUrl" className="text-white text-sm">
+                Credential Document Link
+              </Label>
               <Input
                 id="credentialUrl"
                 type="url"
                 placeholder="https://example.com/my-medical-degree.pdf"
+                className="bg-white/10 text-white border border-emerald-400/20 placeholder:text-gray-400"
                 {...register("credentialUrl")}
               />
               {errors.credentialUrl && (
-                <p className="text-sm font-medium text-red-500 mt-1">
+                <p className="text-sm text-red-500 font-medium">
                   {errors.credentialUrl.message}
                 </p>
               )}
-              <p className="text-sm text-muted-foreground">
-                Please provide a link to your medical degree or certification
+              <p className="text-sm text-emerald-300 italic">
+                Provide link to your certification or medical degree
               </p>
             </div>
 
+            {/* Description */}
             <div className="space-y-2">
-              <Label htmlFor="description">Description of Your Services</Label>
+              <Label htmlFor="description" className="text-white text-sm">
+                Service Description
+              </Label>
               <Textarea
                 id="description"
-                placeholder="Describe your expertise, services, and approach to patient care..."
-                rows="4"
+                placeholder="Describe your expertise, services, and patient care approach..."
+                rows={4}
+                className="bg-white/10 text-white border border-emerald-400/20 placeholder:text-gray-400"
                 {...register("description")}
               />
               {errors.description && (
-                <p className="text-sm font-medium text-red-500 mt-1">
+                <p className="text-sm text-red-500 font-medium">
                   {errors.description.message}
                 </p>
               )}
             </div>
 
-            <div className="pt-2 flex items-center justify-between">
+            {/* Buttons */}
+            <div className="pt-4 flex items-center justify-between">
               <Button
                 type="button"
-                variant="outline"
+                variant="ghost"
                 onClick={() => setStep("choose-role")}
-                className="border-emerald-900/30"
+                className="border border-emerald-500 text-emerald-300 hover:bg-emerald-500/10 transition-all duration-200"
                 disabled={loading}
               >
+                <ArrowLeft className="mr-1 h-4 w-4" />
                 Back
               </Button>
+
               <Button
                 type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-gradient-to-br from-teal-400 via-cyan-500 to-emerald-600 text-white shadow-lg hover:brightness-110 transition-all duration-300"
                 disabled={loading}
               >
                 {loading ? (
@@ -260,7 +288,10 @@ export default function OnboardingPage() {
                     Submitting...
                   </>
                 ) : (
-                  "Submit for Verification"
+                  <>
+                    Submit for Verification
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </>
                 )}
               </Button>
             </div>
