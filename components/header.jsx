@@ -15,6 +15,7 @@ import { Badge } from "./ui/badge";
 import { checkAndAllocateCredits } from "@/actions/credits";
 import Image from "next/image";
 import { Noto_Serif } from "next/font/google";
+import HealthAssistantsDashboard from "./voiceassistance";
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
@@ -100,6 +101,21 @@ export default async function Header() {
                 >
                   <Calendar className="h-4 w-4" />
                   My Appointments
+                </Button>
+                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Calendar className="h-4 w-4" />
+                </Button>
+              </Link>
+            )}
+
+            {user?.role === "PATIENT" && (
+              <Link href="/HealthAssistantsDashboard">
+                <Button
+                  variant="outline"
+                  className="hidden md:inline-flex items-center gap-2"
+                >
+                  <PhoneCall className="h-4 w-4" />
+                  Voice Call
                 </Button>
                 <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
                   <Calendar className="h-4 w-4" />

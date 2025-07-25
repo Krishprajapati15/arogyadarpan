@@ -136,3 +136,21 @@ enum PayoutStatus {
   PROCESSING
   PROCESSED
 }
+
+model MedicineReminder {
+  id           String   @id @default(cuid())
+  medicineName String
+  email        String
+  reminderType String   // 'always', 'specific-day', 'specific-date'
+  time         String   // HH:MM format
+  specificDate String?  // YYYY-MM-DD format, nullable
+  specificDay  String?  // day name in lowercase, nullable
+  dosage       String?  // nullable
+  instructions String?  // nullable
+  isActive     Boolean  @default(true)
+  lastSent     DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("medicine_reminders")
+}
