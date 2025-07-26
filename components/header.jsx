@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import {
   Calendar,
+  Clock,
   CreditCard,
   PhoneCall,
   ShieldCheck,
@@ -15,7 +16,6 @@ import { Badge } from "./ui/badge";
 import { checkAndAllocateCredits } from "@/actions/credits";
 import Image from "next/image";
 import { Noto_Serif } from "next/font/google";
-import HealthAssistantsDashboard from "./voiceassistance";
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
@@ -104,6 +104,21 @@ export default async function Header() {
                 </Button>
                 <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
                   <Calendar className="h-4 w-4" />
+                </Button>
+              </Link>
+            )}
+
+            {user?.role === "PATIENT" && (
+              <Link href="/sendMedicineReminder">
+                <Button
+                  variant="outline"
+                  className="hidden md:inline-flex items-center gap-2"
+                >
+                  <Clock className="h-4 w-4" />
+                  Medicine Reminder
+                </Button>
+                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Clock className="h-4 w-4" />
                 </Button>
               </Link>
             )}
