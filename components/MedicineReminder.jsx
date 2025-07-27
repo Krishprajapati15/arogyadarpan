@@ -7,6 +7,7 @@ import {
   updateReminderStatus,
   deleteReminder,
 } from "../actions/medicineReminderAction";
+import { ColourfulText } from "./ui/colourful-text";
 
 export default function MedicineReminder() {
   const [formData, setFormData] = useState({
@@ -178,7 +179,7 @@ export default function MedicineReminder() {
             </svg>
           </div>
           <h1 className="text-4xl font-bold text-white mb-2">
-            Medicine Reminder
+            <ColourfulText text="Medicine Reminder" />
           </h1>
           <p className="text-gray-400 text-lg">
             Never miss your medication with smart email reminders
