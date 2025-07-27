@@ -17,7 +17,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 import { FeaturesSectionDemo } from "@/components/Bento-grid";
 import { AnimatedModalDemo } from "@/components/animate-button";
-// import MedicineReminder from "@/components/MedicineReminder";
+import MedicineReminder from "@/components/MedicineReminder";
 // import HealthAssistantsDashboard from "@/components/voiceassistance";
 
 export default function Home() {
@@ -226,7 +226,7 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
-      {/* <MedicineReminder /> */}
+      <MedicineReminder />
       {/* <HealthAssistantsDashboard /> */}
     </div>
   );

@@ -15,7 +15,6 @@ const createTransporter = () => {
   });
 };
 
-// Generate beautiful HTML email template
 const generateEmailHTML = (
   medicineName,
   dosage,
