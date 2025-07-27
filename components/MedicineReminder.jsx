@@ -27,6 +27,16 @@ export default function MedicineReminder() {
   const [loadingReminders, setLoadingReminders] = useState(false);
   const [userEmail, setUserEmail] = useState("");
 
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -379,10 +389,9 @@ export default function MedicineReminder() {
               </button>
             </form>
 
-            {/* Message */}
             {message && (
               <div
-                className={`mt-6 p-4 rounded-lg border ${
+                className={`mt-6 p-4 rounded-lg border transition-opacity duration-500 ${
                   message.includes("successfully")
                     ? "bg-green-900/50 border-green-700 text-green-300"
                     : "bg-red-900/50 border-red-700 text-red-300"
