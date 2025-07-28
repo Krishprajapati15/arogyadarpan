@@ -42,12 +42,12 @@ export default async function PricingPage() {
       <Pricing />
 
       {/* FAQ Section - Optional */}
-      <div className="max-w-3xl mx-auto mt-16 text-center">
+      <div className="max-w-3xl mx-auto mt-16 text-center -mb-6">
         <h2 className="text-2xl font-bold text-white mb-2">
           Questions? We're Here to Help
         </h2>
         <p className="text-muted-foreground mb-4">
-          Contact our support team at support@medimeet.com
+          Contact our support team at support@arogyadarpan.com
         </p>
       </div>
     </div>

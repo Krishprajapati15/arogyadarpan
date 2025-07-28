@@ -10,6 +10,7 @@ import {
   ModalFooter,
   ModalTrigger,
 } from "./ui/animated-modal";
+import { useState } from "react";
 import {
   BotIcon,
   FileUpIcon,
@@ -18,7 +19,11 @@ import {
   StethoscopeIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import HealthAssistantsDashboard from "./voiceassistance";
+
 export function AnimatedModalDemo() {
+  const [showDashboard, setShowDashboard] = useState(false);
+
   const images = [
     "/grid_img1.png",
     "/grid_img2.png",
@@ -26,10 +31,19 @@ export function AnimatedModalDemo() {
     "/grid_img4.png",
     "/grid_img3.png",
   ];
+
+  const handleAccessNow = () => {
+    window.location.href = "/voice-assistant";
+  };
+
+  if (showDashboard) {
+    return <HealthAssistantsDashboard />;
+  }
+
   return (
     <div className="py-20 flex items-center justify-center">
       <Modal>
-        <div className="relative flex  w-full items-center justify-center">
+        <div className="relative flex w-full items-center justify-center">
           <section className="border-2 backdrop-blur-md rounded-2xl p-6 md:p-10 max-w-6xl w-5xl mx-auto text-center -mt-14 relative overflow-hidden">
             <div
               className={cn(
@@ -45,13 +59,13 @@ export function AnimatedModalDemo() {
             </h2>
 
             <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium text-emerald-400 shadow">
                 💊 Find Medicines Instantly
               </span>
-              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium text-emerald-400 shadow">
                 🗣️ Voice Assistance Enabled
               </span>
-              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium  text-emerald-400 shadow">
+              <span className="bg-emerald-900 border-emerald-700/30 px-4 py-2 rounded-lg text-sm font-medium text-emerald-400 shadow">
                 🤖 Chat with our Smart Bot
               </span>
             </div>
@@ -67,7 +81,7 @@ export function AnimatedModalDemo() {
           </section>
         </div>
 
-        <ModalBody className="w-4xl my-10">
+        <ModalBody className="w-4xl my-10 mt-24">
           <ModalContent className="-mb-10">
             <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-2">
               Discover health with{" "}
@@ -98,7 +112,7 @@ export function AnimatedModalDemo() {
                 >
                   <img
                     src={image}
-                    alt="bali images"
+                    alt="health images"
                     width="500"
                     height="500"
                     className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
@@ -106,6 +120,7 @@ export function AnimatedModalDemo() {
                 </motion.div>
               ))}
             </div>
+
             <div className="py-6 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
               <div className="flex items-center justify-center">
                 <PillIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
@@ -145,12 +160,16 @@ export function AnimatedModalDemo() {
               </div>
             </div>
           </ModalContent>
+
           <ModalFooter className="gap-4">
             <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28 cursor-pointer">
               Cancel
             </button>
-            <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28 cursor-pointer">
-              Acess Now
+            <button
+              onClick={handleAccessNow}
+              className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28 cursor-pointer"
+            >
+              Access Now
             </button>
           </ModalFooter>
         </ModalBody>
@@ -159,6 +178,7 @@ export function AnimatedModalDemo() {
   );
 }
 
+// Icon components (unchanged)
 const PlaneIcon = ({ className }) => {
   return (
     <svg

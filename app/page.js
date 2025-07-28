@@ -17,8 +17,8 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 import { FeaturesSectionDemo } from "@/components/Bento-grid";
 import { AnimatedModalDemo } from "@/components/animate-button";
-import MedicineReminder from "@/components/MedicineReminder";
-// import HealthAssistantsDashboard from "@/components/voiceassistance";
+
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function Home() {
   return (
@@ -107,8 +107,13 @@ export default function Home() {
                       {feature.icon}
                     </div>
 
-                    <CardTitle className="text-xl font-semibold text-white">
-                      {feature.title}
+                    <CardTitle className="text-xl font-semibold text-white ">
+                      <PointerHighlight
+                        rectangleClassName="bg-neutral-200 dark:bg-cyan-500/5 border-cyan-300 dark:border-neutral-600 p-3 oy-3"
+                        pointerClassName="text-teal-400"
+                      >
+                        {feature.title}
+                      </PointerHighlight>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -226,8 +231,6 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
-      <MedicineReminder />
-      {/* <HealthAssistantsDashboard /> */}
     </div>
   );
 }
