@@ -233,7 +233,7 @@ export default function HealthAssistantsDashboard() {
 
     return (
       <div
-        className={`border-2 ${assistant.borderColor} cursor-pointer transition-all duration-300 rounded-lg bg-white/5 backdrop-blur-sm shadow-2xl`}
+        className={`border-2 ${assistant.borderColor} cursor-pointer transition-all duration-300 rounded-lg bg-white/5 backdrop-blur-sm shadow-2xl `}
       >
         <div className="pt-8 pb-8 px-6 flex flex-col items-center text-center">
           <div
@@ -326,7 +326,7 @@ export default function HealthAssistantsDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background py-8 px-6">
+    <div className="min-h-screen bg-background py-8 px-6 mt-20">
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold  mb-4 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent">
           Health Voice Assistants

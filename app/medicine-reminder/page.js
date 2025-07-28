@@ -6,8 +6,8 @@ import {
   getUserReminders,
   updateReminderStatus,
   deleteReminder,
-} from "../actions/medicineReminderAction";
-import { ColourfulText } from "./ui/colourful-text";
+} from "../../actions/medicineReminderAction";
+import { ColourfulText } from "../../components/ui/colourful-text";
 
 export default function MedicineReminder() {
   const [formData, setFormData] = useState({
@@ -159,26 +159,10 @@ export default function MedicineReminder() {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-background p-6 mt-20">
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 rounded-full mb-4 shadow-lg">
-            <svg
-              className="w-10 h-10 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-          <h1 className="text-4xl font-bold text-white mb-2">
+          <h1 className="text-5xl font-bold text-white mb-2">
             <ColourfulText text="Medicine Reminder" />
           </h1>
           <p className="text-gray-400 text-lg">
@@ -186,7 +170,6 @@ export default function MedicineReminder() {
           </p>
         </div>
 
-        {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-700 rounded-xl p-1 flex">
             <button

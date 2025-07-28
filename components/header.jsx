@@ -92,12 +92,11 @@ export default async function Header() {
               </Link>
             )}
 
-            {/* Patient Links */}
             {user?.role === "PATIENT" && (
               <Link href="/appointments">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Calendar className="h-4 w-4" />
                   My Appointments
@@ -109,10 +108,10 @@ export default async function Header() {
             )}
 
             {user?.role === "PATIENT" && (
-              <Link href="/sendMedicineReminder">
+              <Link href="/medicine-reminder">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Clock className="h-4 w-4" />
                   Medicine Reminder
@@ -124,10 +123,10 @@ export default async function Header() {
             )}
 
             {user?.role === "PATIENT" && (
-              <Link href="/HealthAssistantsDashboard">
+              <Link href="/voice-assistant">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                 >
                   <PhoneCall className="h-4 w-4" />
                   Voice Call
