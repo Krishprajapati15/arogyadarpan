@@ -19,6 +19,7 @@ import { FeaturesSectionDemo } from "@/components/Bento-grid";
 import { AnimatedModalDemo } from "@/components/animate-button";
 
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { FileUploadDemo } from "@/components/upload";
 
 export default function Home() {
   return (
@@ -152,10 +153,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto">
+          <div className="mx-auto border-dashed">
             <Pricing />
 
-            <Card className="mt-12 bg-muted/20 border-emerald-900/30">
+            <Card className="mt-12 bg-muted/20 border-emerald-900/30 border-dashed">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
                   <Stethoscope className="h-5 w-5 mr-2 text-emerald-400 -mb-2" />
@@ -231,6 +232,7 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
+      <FileUploadDemo />
     </div>
   );
 }
