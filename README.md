@@ -48,6 +48,7 @@ We're working hard to bring this vision to life. Stay tuned for updates, or feel
 - MongoDB / Supabase
 - WebRTC (for video calls)
 - Cloudinary (for image uploads)
+- vonage, Vapi and Serpapi (for api uses)
 
 ---
 
