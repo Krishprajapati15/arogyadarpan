@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
-import { IconUpload } from "@tabler/icons-react";
+import { IconUpload, IconX } from "@tabler/icons-react";
 import { useDropzone } from "react-dropzone";
 
 const mainVariant = {
@@ -34,6 +34,12 @@ export const FileUpload = ({ onChange }) => {
     onChange && onChange(newFiles);
   };
 
+  const handleFileRemove = (indexToRemove) => {
+    const updatedFiles = files.filter((_, index) => index !== indexToRemove);
+    setFiles(updatedFiles);
+    onChange && onChange(updatedFiles);
+  };
+
   const handleClick = () => {
     fileInputRef.current?.click();
   };
@@ -48,11 +54,11 @@ export const FileUpload = ({ onChange }) => {
   });
 
   return (
-    <div className="w-full" {...getRootProps()}>
+    <div className="w-full " {...getRootProps()}>
       <motion.div
         onClick={handleClick}
         whileHover="animate"
-        className="p-10 group/file block rounded-lg cursor-pointer w-full relative overflow-hidden"
+        className="p-10 group/file block rounded-lg cursor-pointer w-full mb-10 relative overflow-hidden"
       >
         <input
           ref={fileInputRef}
@@ -66,10 +72,10 @@ export const FileUpload = ({ onChange }) => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <p className="relative z-20 font-sans font-bold text-neutral-700 dark:text-neutral-300 text-base">
-            Upload Image of Medicine
+            Upload Image of Medicine or Prescription
           </p>
           <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base mt-2">
-            Drag or drop your files here or click to upload
+            Drag or drop your files here or click to upload Image of Medicine
           </p>
           <div className="relative w-full mt-10 max-w-xl mx-auto">
             {files.length > 0 &&
@@ -82,7 +88,17 @@ export const FileUpload = ({ onChange }) => {
                     "shadow-sm"
                   )}
                 >
-                  <div className="flex justify-between w-full items-center gap-4">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleFileRemove(idx);
+                    }}
+                    className="absolute top-2 right-2 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors z-50"
+                  >
+                    <IconX className="h-4 w-4 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200" />
+                  </button>
+
+                  <div className="flex justify-between w-full items-center gap-4 pr-8">
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

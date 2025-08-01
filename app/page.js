@@ -17,9 +17,8 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { InfiniteMovingCardsDemo } from "@/components/doctorcards";
 import { FeaturesSectionDemo } from "@/components/Bento-grid";
 import { AnimatedModalDemo } from "@/components/animate-button";
-
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { FileUploadDemo } from "@/components/upload";
+import { Aboutus } from "@/components/aboutus";
 
 export default function Home() {
   return (
@@ -232,7 +231,19 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
-      <FileUploadDemo />
+      <div className="w-full py-10 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
+          Meet the Visionaries
+        </h2>
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300   ">
+          Get to know the minds behind the code — passion, precision, and
+          purpose in every line.
+        </p>
+
+        <div>
+          <Aboutus />
+        </div>
+      </div>
     </div>
   );
 }
