@@ -155,7 +155,7 @@ export default async function Header() {
             )}
 
             {user?.role === "PATIENT" && (
-              <Link href="/hospitalfind">
+              <Link href="/nearby-hospitals">
                 <Button
                   variant="outline"
                   className="hidden md:inline-flex items-center gap-2 cursor-pointer"
