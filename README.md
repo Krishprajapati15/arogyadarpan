@@ -41,14 +41,17 @@ We're working hard to bring this vision to life. Stay tuned for updates, or feel
 
 ## 🛠️ Tech Stack
 
-- Next.js
+- Next.js 16
+- react 19 
 - Tailwind CSS
 - OpenAI (for AI features)
-- Node.js + Express
-- MongoDB / Supabase
-- WebRTC (for video calls)
+- Node.js + Express (Backend)
+- NeonDB
+- Vonage (for video calls)
 - Cloudinary (for image uploads)
-- vonage, Vapi and Serpapi (for api uses)
+- Vapi and n8n(for the Voice assistnace)
+- SerpAPI for the find hospital 
+- Here.com for the map 
 
 ---
 
