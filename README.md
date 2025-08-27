@@ -1,6 +1,6 @@
 # 🌐 ArogyaDarpan – Redefining Digital Healthcare
 
-**ArogyaDarpan** is an AI-powered healthcare platform that brings smart, secure, and accessible medical services directly to your fingertips — no matter where you are in the world. With features built for both patients and doctors, we aim to transform the healthcare experience.
+**ArogyaDarpan is an AI-powered healthcare platform that brings smart, secure, and accessible medical services directly to your fingertips — no matter where you are in the world. With features built for both patients and doctors, we aim to transform the healthcare experience.**
 
 ---
 
