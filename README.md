@@ -30,12 +30,6 @@ Track past diseases, check-ups, prescriptions, and suggested health actions — 
 ### 🌍 Global Connectivity  
 Whether you're in a metro city or remote village, ArogyaDarpan lets you connect with world-class doctors instantly, no boundaries attached.
 
----
-
-## 📌 Project Status
-
-🚧 **Currently Under Construction**  
-We're working hard to bring this vision to life. Stay tuned for updates, or feel free to contribute!
 
 ---
 
