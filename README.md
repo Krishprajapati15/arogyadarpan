@@ -1,7 +1,5 @@
 
 
----
-
 ## 🛠️ Tech Stack
 
 - Next.js 16
