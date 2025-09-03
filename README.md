@@ -19,7 +19,6 @@
 ## 📬 Contact
 
 Made with ❤️ by **Krish Prajapati**  
-📧 [prajapatikrish132005@gmail.com](mailto:prajapatikrish132005@gmail.com)  
-🔗 [GitHub](https://github.com/Krishprajapati15)
+📧 [prajapatikrish132005@gmail.com](mailto:prajapatikrish132005@gmail.com) 
 
 
