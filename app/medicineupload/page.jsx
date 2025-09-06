@@ -304,7 +304,7 @@ const FileUpload = ({ onChange, onUpload }) => {
         <div className="flex justify-center animate-fadeIn">
           <button
             onClick={() => onUpload && onUpload(files)}
-            className=" bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600  text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 "
+            className=" bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 mb-6 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 "
           >
             <IconSparkles className="h-5 w-5 " />
             Analyze with AI
@@ -410,7 +410,7 @@ const MedicineChatbot = ({ uploadedFiles, onBack }) => {
   return (
     <div className="flex flex-col h-[80vh] bg-white dark:bg-neutral-900 rounded-xl shadow-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700 animate-slideIn">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
+      <div className="bg-gradient-to-r from-teal-500 to-cyan-600 p-4 text-white">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
@@ -449,7 +449,7 @@ const MedicineChatbot = ({ uploadedFiles, onBack }) => {
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {message.type === "bot" && (
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
                 <IconBot className="h-4 w-4 text-white" />
               </div>
             )}
@@ -457,7 +457,7 @@ const MedicineChatbot = ({ uploadedFiles, onBack }) => {
             <div
               className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl transition-all duration-300 hover:shadow-md ${
                 message.type === "user"
-                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                  ? "bg-gradient-to-r from-teal-500 to-cyan-600 text-white"
                   : "bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600"
               }`}
             >
@@ -540,7 +540,7 @@ const MedicineChatbot = ({ uploadedFiles, onBack }) => {
           <button
             onClick={sendMessage}
             disabled={!inputMessage.trim() && uploadedFiles.length === 0}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
+            className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-cyan-600 hover:to-teal-700 disabled:from-gray-400 disabled:to-gray-500 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
           >
             <IconSend className="h-5 w-5" />
           </button>
