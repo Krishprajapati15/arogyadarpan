@@ -398,12 +398,12 @@ const HospitalChatbot = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100 mt-16">
+    <div className="flex h-screen bg-gray-100 mt-16 mb-10">
       {/* Chat Section */}
       <div
         className={`${
           showMap ? "w-1/2" : "w-full"
-        } flex flex-col bg-white transition-all duration-300`}
+        } flex flex-col bg-black transition-all duration-300`}
       >
         {/* Header */}
         <div className="bg-teal-400 text-white p-4 flex items-center gap-3">
@@ -459,7 +459,7 @@ const HospitalChatbot = () => {
                           .map((hospital) => (
                             <div
                               key={hospital.id}
-                              className="bg-white p-3 rounded-lg text-gray-800"
+                              className="bg-gray-800 p-3 rounded-lg text-gray-800"
                             >
                               <div className="flex justify-between items-start mb-1">
                                 <h4 className="font-semibold text-sm">
@@ -538,7 +538,7 @@ const HospitalChatbot = () => {
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask me to find hospitals... e.g., 'Show me hospitals in Palanpur'"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               disabled={isLoading}
             />
             <button
