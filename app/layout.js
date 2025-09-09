@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import React from "react";
 import { AnimatedTooltip } from "../components/ui/animated-tooltip";
+import Chatbot from "@/components/chatbot";
+import BotpressWrapper from "@/components/chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -91,6 +93,8 @@ export default function RootLayout({ children }) {
             <Header />
             <main className="min-h-screen">{children}</main>
             <Toaster richColors />
+
+            <BotpressWrapper />
 
             <footer className="bg-muted/50 py-8">
               <div className="container mx-auto px-4 text-center text-gray-200">

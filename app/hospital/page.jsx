@@ -46,7 +46,6 @@ const HospitalChatbot = () => {
   }, [showMap, mapData]);
 
   const initializeMap = () => {
-    // Load Leaflet CSS and JS
     if (!document.querySelector('link[href*="leaflet.css"]')) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
@@ -479,7 +478,7 @@ const HospitalChatbot = () => {
                                   href={`https://www.google.com/maps/dir/?api=1&destination=${hospital.lat},${hospital.lng}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="bg-blue-500 text-white px-2 py-1 rounded text-xs flex items-center gap-1 hover:bg-blue-600"
+                                  className="bg-cyan-500 text-white px-2 py-1 rounded text-xs flex items-center gap-1 hover:bg-blue-600"
                                 >
                                   <Navigation className="w-3 h-3" />
                                   Directions
