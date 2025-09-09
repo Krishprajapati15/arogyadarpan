@@ -25,14 +25,6 @@ export default function BotpressIntegration() {
             title: "stratus@botpress.com",
             link: "mailto:stratus@botpress.com",
           },
-          phone: {
-            title: "555-555-5555",
-            link: "tel:555-555-5555",
-          },
-          website: {
-            title: "https://botpress.com",
-            link: "https://botpress.com",
-          },
           termsOfService: {
             title: "Terms of Service",
             link: "https://botpress.com/terms",
