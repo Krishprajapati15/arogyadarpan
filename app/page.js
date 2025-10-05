@@ -23,7 +23,9 @@ import { Aboutus } from "@/components/aboutus";
 export default function Home() {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden py-12">
+      <section className="relative overflow-hidden py-12 md:py-20">
+        {" "}
+        {/* Added md:py-20 for better vertical spacing on larger screens */}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-8 ml-4">
@@ -51,7 +53,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700 z-100"
+                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700 z-100 w-full sm:w-auto"
                 >
                   <Link href="/onboarding">
                     Get Started <ArrowRight className="ml-2 h-4 w-4 " />
@@ -61,14 +63,16 @@ export default function Home() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-emerald-700/30 hover:bg-muted/80 z-100"
+                  className="border-emerald-700/30 hover:bg-muted/80 z-100 w-full sm:w-auto"
                 >
                   <Link href="/doctors">Find Doctors</Link>
                 </Button>
               </div>
             </div>
 
-            <div className="relative h-[520px] lg:h-[620px] rounded-xl overflow-hidden">
+            <div className="relative h-[400px] sm:h-[520px] lg:h-[620px] rounded-xl overflow-hidden mt-8 lg:mt-0">
+              {" "}
+              {/* Adjusted h-[520px] to h-[400px] on mobile and added margin on mobile */}
               <GlobeDemo />
             </div>
           </div>
@@ -76,8 +80,12 @@ export default function Home() {
         <BackgroundBeams />
       </section>
 
-      <section className="bg-muted/30">
-        <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+      <section className="bg-muted/30 py-16 md:py-24">
+        {" "}
+        {/* Added vertical padding */}
+        <div className="relative flex h-auto min-h-[50rem] w-full items-center justify-center bg-white dark:bg-black py-16">
+          {" "}
+          {/* Changed fixed h-[50rem] to h-auto min-h-[50rem] and added vertical padding */}
           <div
             className={cn(
               "absolute inset-0",
@@ -128,7 +136,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-10">
+      <section id="pricing" className="py-10 md:py-20">
+        {" "}
+        {/* Added md:py-20 */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <ContainerTextFlip
@@ -195,8 +205,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-muted/60">
-        <div className="relative flex h-[40rem] w-full items-center justify-center bg-white dark:bg-black">
+      <section className="bg-muted/60 py-16 md:py-24">
+        {" "}
+        {/* Added vertical padding */}
+        <div className="relative flex h-auto min-h-[40rem] w-full items-center justify-center bg-white dark:bg-black py-16">
+          {" "}
+          {/* Changed fixed h-[40rem] to h-auto min-h-[40rem] and added vertical padding */}
           <div
             className={cn(
               "absolute inset-0",
@@ -231,7 +245,9 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
-      <div className="w-full py-10 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
+      <div className="w-full py-10 md:py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
+        {" "}
+        {/* Added md:py-20 */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
           Meet the Visionaries
         </h2>
@@ -239,7 +255,6 @@ export default function Home() {
           Get to know the minds behind the code — passion, precision, and
           purpose in every line.
         </p>
-
         <div>
           <Aboutus />
         </div>
