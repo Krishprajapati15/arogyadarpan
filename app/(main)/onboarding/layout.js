@@ -47,7 +47,7 @@ export default async function OnboardingLayout({ children }) {
             Step Into Care, Your Way
           </h1>
           <p className="text-muted-foreground text-lg">
-            Whether you're healing or helping, start your journey below.
+            Whether You are healing or helping, start your journey below.
           </p>
         </div>
 

@@ -1,0 +1,10 @@
+reactbits
+1. Scroll Velocity - for text 
+2. count up
+3. pixel transion 
+4. glare hower 
+5. target cursor 
+6. animated list
+
+
+laynard is last topic which we explore together 
