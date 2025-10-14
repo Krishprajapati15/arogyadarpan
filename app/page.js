@@ -72,7 +72,6 @@ export default function Home() {
 
             <div className="relative h-[400px] sm:h-[520px] lg:h-[620px] rounded-xl overflow-hidden mt-8 lg:mt-0">
               {" "}
-              {/* Adjusted h-[520px] to h-[400px] on mobile and added margin on mobile */}
               <GlobeDemo />
             </div>
           </div>
@@ -85,7 +84,6 @@ export default function Home() {
         {/* Added vertical padding */}
         <div className="relative flex h-auto min-h-[50rem] w-full items-center justify-center bg-white dark:bg-black py-16">
           {" "}
-          {/* Changed fixed h-[50rem] to h-auto min-h-[50rem] and added vertical padding */}
           <div
             className={cn(
               "absolute inset-0",
