@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
                 <AnimatedTooltipPreview />
                 <p>
                   © {new Date().getFullYear()} ArogyaDarpan. Crafted with
-                  passion by Krish & Jainil
+                  passion by Krish & Jainil in July 2025
                 </p>
               </div>
             </footer>
