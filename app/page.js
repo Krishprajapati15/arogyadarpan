@@ -136,7 +136,6 @@ export default function Home() {
 
       <section id="pricing" className="py-10 md:py-20">
         {" "}
-        {/* Added md:py-20 */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <ContainerTextFlip
