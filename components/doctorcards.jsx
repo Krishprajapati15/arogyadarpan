@@ -11,7 +11,7 @@ export function InfiniteMovingCardsDemo() {
           Trusted by Experts.
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Discover how ArogyaDarpan is empowering healthcare professionals —
+          Discover how caregen-ai is empowering healthcare professionals —
           enabling doctors to connect, consult, and care beyond boundaries.
         </p>
       </div>
@@ -27,19 +27,19 @@ export function InfiniteMovingCardsDemo() {
 const testimonials = [
   {
     quote:
-      "I believe that technology can bridge the gap between timely treatment and rural patients. ArogyaDarpan empowers me to do exactly that — offer care, fast and reliably.",
+      "I believe that technology can bridge the gap between timely treatment and rural patients. caregen-ai empowers me to do exactly that — offer care, fast and reliably.",
     name: "Dr. Meera Joshi",
     title: "Cardiologist",
   },
   {
     quote:
-      "With ArogyaDarpan, I can connect with patients beyond clinic walls. It's healthcare without boundaries, and it's the future we need.",
+      "With caregen-ai, I can connect with patients beyond clinic walls. It's healthcare without boundaries, and it's the future we need.",
     name: "Dr. Rajiv Kapoor",
     title: "General Physician",
   },
   {
     quote:
-      "I’ve seen countless lives changed because of early detection. Platforms like ArogyaDarpan help patients take that crucial first step — from awareness to action.",
+      "I’ve seen countless lives changed because of early detection. Platforms like caregen-ai help patients take that crucial first step — from awareness to action.",
     name: "Dr. Ayesha Siddiqui",
     title: "Oncologist",
   },
@@ -51,7 +51,7 @@ const testimonials = [
   },
   {
     quote:
-      "For a pediatrician, trust and accessibility are everything. ArogyaDarpan makes both possible, helping parents get the guidance they need quickly.",
+      "For a pediatrician, trust and accessibility are everything. caregen-ai makes both possible, helping parents get the guidance they need quickly.",
     name: "Dr. Neeta Sharma",
     title: "Pediatrician",
   },

@@ -67,9 +67,9 @@ function AnimatedTooltipPreview() {
 }
 
 export const metadata = {
-  title: "ArogyaDarpan - Your Health Companion",
+  title: "caregen-ai - Your Health Companion",
   description:
-    " ArogyaDarpan is your personal health companion, providing insights and tools to manage your health effectively.",
+    " caregen-ai is your personal health companion, providing insights and tools to manage your health effectively.",
 };
 
 export default function RootLayout({ children }) {
@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
     >
       <html lang="en" suppressHydrationWarning>
         <head>
-          <link rel="icon" href="/logo.png" sizes="any" />
+          <link rel="icon" href="/logo1.png" sizes="any" />
         </head>
         <body className={`${inter.className}`}>
           <ThemeProvider
@@ -98,10 +98,10 @@ export default function RootLayout({ children }) {
 
             <footer className="bg-muted/50 py-8">
               <div className="container mx-auto px-4 text-center text-gray-200">
-                <AnimatedTooltipPreview />
+                {/* <AnimatedTooltipPreview /> */}
                 <p>
-                  © {new Date().getFullYear()} ArogyaDarpan. Crafted with
-                  passion by Krish & Jainil
+                  © {new Date().getFullYear()} caregen-ai. Crafted with passion
+                  by Yashpal in jan 2026
                 </p>
               </div>
             </footer>
