@@ -6,7 +6,7 @@ const Highlight = ({ children, className }) => (
   <span
     className={cn(
       "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
-      className
+      className,
     )}
   >
     {children}
@@ -21,7 +21,7 @@ const CARDS = [
     content: (
       <p>
         I had a health scare during travel, and{" "}
-        <Highlight>ArogyaDarpan connected me to a doctor</Highlight> within
+        <Highlight>caregen-ai connected me to a doctor</Highlight> within
         minutes. The experience was smooth and life-saving.
       </p>
     ),
@@ -33,7 +33,7 @@ const CARDS = [
     content: (
       <p>
         Managing doctor appointments and health records was a hassle before.{" "}
-        <Highlight>ArogyaDarpan made it super convenient</Highlight> to stay on
+        <Highlight>caregen-ai made it super convenient</Highlight> to stay on
         top of everything.
       </p>
     ),
@@ -45,8 +45,8 @@ const CARDS = [
     content: (
       <p>
         As a doctor, I’ve found{" "}
-        <Highlight>ArogyaDarpan's platform efficient and easy</Highlight> to
-        use. It helps me reach patients who need me in real time.
+        <Highlight>caregen-ai's platform efficient and easy</Highlight> to use.
+        It helps me reach patients who need me in real time.
       </p>
     ),
   },

@@ -46,7 +46,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg text-justify">
-                ArogyaDarpan brings you smart, seamless healthcare connect with
+                caregen-ai brings you smart, seamless healthcare connect with
                 doctors and manage your health anytime, anywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -89,7 +89,7 @@ export default function Home() {
               "absolute inset-0",
               "[background-size:20px_20px]",
               "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
             )}
           />
           <div className="relative container mx-auto px-4">
@@ -213,7 +213,7 @@ export default function Home() {
               "absolute inset-0",
               "[background-size:20px_20px]",
               "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
             )}
           />
           <div className="container mx-auto px-4 relative z-10">
@@ -228,7 +228,7 @@ export default function Home() {
                 Real Experiences. Real Impact.
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Discover how ArogyaDarpan is transforming lives — from patients
+                Discover how caregen-ai is transforming lives — from patients
                 finding instant care to doctors reaching those in need.
               </p>
             </div>
@@ -245,16 +245,16 @@ export default function Home() {
       <div className="w-full py-10 md:py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
         {" "}
         {/* Added md:py-20 */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
+        {/* <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
           Meet the Visionaries
         </h2>
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300   ">
           Get to know the minds behind the code — passion, precision, and
           purpose in every line.
-        </p>
-        <div>
+        </p> */}
+        {/* <div>
           <Aboutus />
-        </div>
+        </div> */}
       </div>
     </div>
   );
