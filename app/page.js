@@ -28,7 +28,7 @@ export default function Home() {
         {/* Added md:py-20 for better vertical spacing on larger screens */}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-8 ml-4">
+            <div className="space-y-8 ml-4 mt-5">
               <ContainerTextFlip
                 className="z-10"
                 words={[
