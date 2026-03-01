@@ -23,7 +23,9 @@ import { Aboutus } from "@/components/aboutus";
 export default function Home() {
   return (
     <div className="bg-background">
-      <section className="relative overflow-hidden py-12">
+      <section className="relative overflow-hidden py-12 md:py-20">
+        {" "}
+        {/* Added md:py-20 for better vertical spacing on larger screens */}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-8 ml-4 mt-5">
@@ -44,14 +46,14 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg text-justify">
-                ArogyaDarpan brings you smart, seamless healthcare connect with
+                caregen-ai brings you smart, seamless healthcare connect with
                 doctors and manage your health anytime, anywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700 z-100"
+                  className="bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-600 text-white hover:bg-teal-700 z-100 w-full sm:w-auto"
                 >
                   <Link href="/onboarding">
                     Get Started <ArrowRight className="ml-2 h-4 w-4 " />
@@ -61,14 +63,15 @@ export default function Home() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-emerald-700/30 hover:bg-muted/80 z-100"
+                  className="border-emerald-700/30 hover:bg-muted/80 z-100 w-full sm:w-auto"
                 >
                   <Link href="/doctors">Find Doctors</Link>
                 </Button>
               </div>
             </div>
 
-            <div className="relative h-[520px] lg:h-[620px] rounded-xl overflow-hidden">
+            <div className="relative h-[400px] sm:h-[520px] lg:h-[620px] rounded-xl overflow-hidden mt-8 lg:mt-0">
+              {" "}
               <GlobeDemo />
             </div>
           </div>
@@ -76,14 +79,17 @@ export default function Home() {
         <BackgroundBeams />
       </section>
 
-      <section className="bg-muted/30">
-        <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+      <section className="bg-muted/30 py-16 md:py-24">
+        {" "}
+        {/* Added vertical padding */}
+        <div className="relative flex h-auto min-h-[50rem] w-full items-center justify-center bg-white dark:bg-black py-16">
+          {" "}
           <div
             className={cn(
               "absolute inset-0",
               "[background-size:20px_20px]",
               "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
             )}
           />
           <div className="relative container mx-auto px-4">
@@ -128,7 +134,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-10">
+      <section id="pricing" className="py-10 md:py-20">
+        {" "}
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <ContainerTextFlip
@@ -195,14 +202,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-muted/60">
-        <div className="relative flex h-[40rem] w-full items-center justify-center bg-white dark:bg-black">
+      <section className="bg-muted/60 py-16 md:py-24">
+        {" "}
+        {/* Added vertical padding */}
+        <div className="relative flex h-auto min-h-[40rem] w-full items-center justify-center bg-white dark:bg-black py-16">
+          {" "}
+          {/* Changed fixed h-[40rem] to h-auto min-h-[40rem] and added vertical padding */}
           <div
             className={cn(
               "absolute inset-0",
               "[background-size:20px_20px]",
               "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
             )}
           />
           <div className="container mx-auto px-4 relative z-10">
@@ -217,7 +228,7 @@ export default function Home() {
                 Real Experiences. Real Impact.
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Discover how ArogyaDarpan is transforming lives — from patients
+                Discover how caregen-ai is transforming lives — from patients
                 finding instant care to doctors reaching those in need.
               </p>
             </div>
@@ -231,18 +242,19 @@ export default function Home() {
       <InfiniteMovingCardsDemo />
       <FeaturesSectionDemo />
       <AnimatedModalDemo />
-      <div className="w-full py-10 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
+      <div className="w-full py-10 md:py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black text-center">
+        {" "}
+        {/* Added md:py-20 */}
+        {/* <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 tracking-wide">
           Meet the Visionaries
         </h2>
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300   ">
           Get to know the minds behind the code — passion, precision, and
           purpose in every line.
-        </p>
-
-        <div>
+        </p> */}
+        {/* <div>
           <Aboutus />
-        </div>
+        </div> */}
       </div>
     </div>
   );

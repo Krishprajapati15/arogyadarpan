@@ -38,7 +38,7 @@ export default async function Header() {
           className="flex items-center gap-2 cursor-pointer select-none"
         >
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="Medimeet Logo"
             width={200}
             height={60}
@@ -57,7 +57,7 @@ export default async function Header() {
       ${notoSerif.className}
     `}
           >
-            ArogyaDarpan
+            CareGen AI
           </span>
         </Link>
         <div className="flex items-center space-x-2">
